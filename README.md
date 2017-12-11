@@ -1,25 +1,19 @@
 # README
-2017 Dec 11
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a Ruby on Rails 5 application that allows user to create their own profolios
 
-Things you may want to cover:
+### Feature
+- Real time Chat engine for comments
+- Blogs
+- Portfolio
+- Drag and Drop interface
 
-* Ruby version
+### Code Example
+```ruby
+def my_great_action
+    puts "This is great action definition"
+end
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# rails-app-portfolio
+```javascript
+alert('Hi, I'm called by altert()')
+```
