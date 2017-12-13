@@ -12,7 +12,6 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio.save
         format.html { redirect_to portfolios_path, notice: 'Your new portfolio is live.' }
-        format.json { render :show, status: :created, location: @portfolio }
       else
         format.html { render :new }
       end
@@ -26,8 +25,14 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
   end
-
-    
+  
+  def destroy
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully deleted.' }
+    end
+  end
 
 
   def update
@@ -37,7 +42,6 @@ class PortfoliosController < ApplicationController
         format.html { redirect_to portfolios_path, notice: 'Your portfolio is updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
