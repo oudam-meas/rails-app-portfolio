@@ -13,10 +13,14 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio = Portfolio.new
+    # create new technology for the portfolio
+    3.times {
+      @portfolio.technologies.build
+    }
   end
 
   def create
-    @portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
     respond_to do |format|
       if @portfolio.save
         format.html { redirect_to portfolios_path, notice: 'Your new portfolio is live.' }

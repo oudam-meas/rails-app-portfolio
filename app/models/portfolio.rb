@@ -12,7 +12,8 @@ class Portfolio < ApplicationRecord
   end
 
   scope :ruby_on_rails_portfolio, -> { where(subtitle: 'Ruby on Rails')}
-
+  
+  # Default attributes value
   after_initialize :set_defaults # after initialize is call when "new" action is called in the controller
 
   def set_defaults
