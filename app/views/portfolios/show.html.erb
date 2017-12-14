@@ -1,3 +1,7 @@
+<%= link_to "Edit", edit_portfolio_path(@portfolio.id) %>
+<p>
+<%= image_tag @portfolio.main_image unless @portfolio.main_image.nil? %>
+
 <h1>
   <%= @portfolio.title %>
 </h1>
@@ -7,5 +11,3 @@
 <p>
   <%= @portfolio.body %>
 </p>
-<%= image_tag @portfolio.thumb_image unless @portfolio.thumb_image.nil? %>
-<%= link_to "Edit", edit_portfolio_path(@portfolio.id) %>
