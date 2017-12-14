@@ -3,10 +3,18 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def angular
+    @angular_portfolio = Portfolio.angular
+  end
+
+  def ruby
+    @ruby_portfolio = Portfolio.ruby_on_rails_portfolio
+  end
+
   def new
     @portfolio = Portfolio.new
   end
-  
+
   def create
     @portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
     respond_to do |format|
@@ -25,7 +33,7 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
   end
-  
+
   def destroy
     @portfolio = Portfolio.find(params[:id])
     @portfolio.destroy
