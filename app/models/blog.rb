@@ -6,4 +6,10 @@ class Blog < ApplicationRecord
   validates_presence_of :title, :body
 
   belongs_to :topic
+
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.topic_id= Topic.last.id
+  end
 end
