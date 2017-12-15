@@ -3,5 +3,7 @@ class ApplicationController < ActionController::Base
   # Devise User Parameter Whitelist Include
   include DeviseWhitelist
   include SetSource
-
+  include CurrentUserConcern
+  
+  
 end
