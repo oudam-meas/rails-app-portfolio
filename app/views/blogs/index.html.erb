@@ -2,6 +2,7 @@
 
 <h1>Blogs Info</h1>
 
+<%= link_to 'New Blog', new_blog_path %>
 <table>
   <thead>
     <tr>
@@ -12,18 +13,6 @@
   </thead>
 
   <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title.upcase %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @blogs %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
