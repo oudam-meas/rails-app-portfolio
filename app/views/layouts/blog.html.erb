@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <META name="keywords" content="<%= @seo_keywords %>" />
+
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'blogs', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="flash">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    </div>
+
+    <div class="header">
+      <% if current_user.is_a?(User) %>
+        <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to  "Login", new_user_session_path %>
+        <%= link_to  "Register", new_user_registration_path %>
+      <% end %>
+    </div>
+    <%= yield %>
+    <div>
+      <div><%= link_to "Home", root_path %></div>
+      <div><%= link_to "About", about_me_path %></div>
+      <div><%= link_to "Contact", contact_path %></div>
+      <div><%= link_to "Blogs", blogs_path %></div>
+      <div><%= link_to "Portfloio", portfolios_path %></div>
+    </div>
+    <% if session[:source] %>
+      Thanks for visiting me from <%= session[:source] %>
+    <% end %>
+  </body>
+</html>
