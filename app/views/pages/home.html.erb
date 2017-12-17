@@ -1,6 +1,11 @@
-<h1>HomePage</h1>
 Hi, <%= current_user.first_name%>
 <hr>
+
+<%= content_tag :p, class: "my-special-class" do %>
+Hi! I'm in p tag
+<% end %>
+
+<h1>Blog posts</h1>
 <p>
    <%= @posts.inspect %>
 </p>
@@ -9,4 +14,3 @@ Hi, <%= current_user.first_name%>
    <%= @skills.inspect %>
 </p>
 <%= current_user.class %>
-<hr>
