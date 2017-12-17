@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsPortfolio</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
+    <META name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,6 +14,13 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
     </div>
+    <div>
+      <div><%= link_to "Home", root_path %></div>
+      <div><%= link_to "About", about_me_path %></div>
+      <div><%= link_to "Contact", contact_path %></div>
+      <div><%= link_to "Blogs", blogs_path %></div>
+      <div><%= link_to "Portfloio", portfolios_path %></div>
+    </div>
     <div class="header">
       <% if current_user.is_a?(User) %>
         <%= link_to  "Logout", destroy_user_session_path, method: :delete %>
@@ -22,6 +30,7 @@
       <% end %>
     </div>
     <%= yield %>
+
     <% if session[:source] %>
       Thanks for visiting me from <%= session[:source] %>
     <% end %>
