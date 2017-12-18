@@ -1,11 +1,17 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   layout  "blog"
-  
+
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.spacial_blog
+    # @blogs = Blog.featured_blog
+    # Puts Debugger
+      # puts "*"*100
+      # puts @blogs.inspect
+    # ByeBug Debugger
+      #byebug
     @page_title = "Rails Portfolio | Blog"
   end
 
