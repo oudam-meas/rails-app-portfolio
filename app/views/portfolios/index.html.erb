@@ -1,6 +1,6 @@
 <h1>Portfolio Items</h1>
 
-<%= link_to "Create new",  new_portfolio_url %>
+<%= link_to "Create new",  new_portfolio_url if logged_in?(:site_admin)  %>
 
 <br><%= new_portfolio_url %><br>
 <%= new_portfolio_path %><br>

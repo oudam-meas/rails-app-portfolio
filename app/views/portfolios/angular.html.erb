@@ -2,7 +2,7 @@
 
 
 <br><%= new_portfolio_url %><br>
-<%= new_portfolio_path %><br>
+<%= new_portfolio_path if logged_in?(:site_admin) %><br>
 
 <% @angular_portfolio.each do |portfolio| %>
     <p><%= link_to portfolio.title, portfolio_show_path(portfolio) %></p>
