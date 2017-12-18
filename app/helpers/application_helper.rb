@@ -16,4 +16,7 @@ module ApplicationHelper
     end
   end
 
+  def copyright_generator
+      PortfolioModuleViewTool::Renderer.copyright 'Meas Outdam', 'All right reserved'
+  end
 end
