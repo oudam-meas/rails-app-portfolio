@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', blogs_path if logged_in?(:site_admin) %>
+<div class="col-sm-8 blog-main">
+  <div class="blog-post">
+    <p id="notice"><%= notice %></p>
+    <h2 class="blog-post-title">  <%= link_to @blog.title.upcase, @blog %></h2>
+    <p class="blog-post-meta">Published <%= distance_of_time_in_words @blog.created_at,Time.now %> ago, <%= link_to @blog.status, toggle_status_blog_path(@blog) if logged_in?(:site_admin) %></p>
+    <p><%= @blog.body %></p>
+    <p><%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
+    <%= link_to 'Back', blogs_path if logged_in?(:site_admin) %></p>
+  </div>
+</div>
