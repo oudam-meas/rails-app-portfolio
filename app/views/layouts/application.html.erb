@@ -12,17 +12,23 @@
   </head>
 
   <body>
-    <div class="flash">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+          <%= render "shared/application_nav" %>
+
+          <%= login_helper %>
+
+          <%= yield %>
+
+          <%= copyright_generator %>
+
+          <%= source_helper("application") %>
+
+        </div>
+      </div>
     </div>
-    <%= render 'shared/nav', location: 'bottom' %>
-
-    <%= login_helper %>
-
-    <%= yield %>
-    <p></p>
-    <%= copyright_generator %>
-    <%= source_helper("application") %>
   </body>
 </html>

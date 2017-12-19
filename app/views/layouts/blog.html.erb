@@ -3,6 +3,8 @@
   <head>
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <META name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,17 +12,23 @@
   </head>
 
   <body>
-    <div class="flash">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+          <%= render "shared/application_nav" %>
+
+          <%= login_helper %>
+
+          <%= yield %>
+
+          <%= copyright_generator %>
+
+          <%= source_helper("application") %>
+
+        </div>
+      </div>
     </div>
-
-    <%= login_helper %>
-
-    <%= yield %>
-    <%= render 'shared/nav', location: 'bottom' %>
-    <% if session[:source] %>
-      Thanks for visiting me from <%= session[:source] %>
-    <% end %>
   </body>
 </html>
