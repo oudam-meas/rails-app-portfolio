@@ -1,30 +1,30 @@
 
 <%= form_with(model: @portfolio, local: true) do |form| %>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :portfolio_title %>
+    <%= form.text_field :title, id: :portfolio_title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :subtitle %>
-    <%= form.text_field :subtitle, id: :portfolio_subtitle %>
+    <%= form.text_field :subtitle, id: :portfolio_subtitle, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
-    <%= form.text_area :body, id: :blog_body %>
+    <%= form.text_area :body, id: :blog_body, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
   <ul>
     <%= form.fields_for :technologies do |technology_form| %>
     <li>
       <%= technology_form.label :name  %>
-      <%= technology_form.text_field :name  %>
+      <%= technology_form.text_field :name, class: 'form-control'  %>
     </li>
     <% end %>
   </ul>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit, class: 'btn btn-primary'%>
   </div>
 <% end %>

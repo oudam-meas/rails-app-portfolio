@@ -1,6 +1,10 @@
-<h1>Editing Blog</h1>
-
-<%= render 'form', blog: @blog %>
-
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+<div class="col-sm-8 blog-main">
+  <div class="blog-post">
+    <p id="notice"><%= notice %></p>
+    <h2 class="blog-post-title">Edit blog</h2>
+    <p class="blog-post-meta">
+      <%= render 'form', blog: @blog %>
+    </p>
+    <%= link_to 'Back', blogs_path %>
+  </div>
+</div>
