@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.spacial_blog
+    @blogs = Blog.page(params[:page]).per(5)
     # @blogs = Blog.featured_blog
     # Puts Debugger
       # puts "*"*100
