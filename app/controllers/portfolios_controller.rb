@@ -3,8 +3,18 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :edit, :update]}, site_admin: :all
   layout "portfolio"
 
+  def sort
+    params[:order].each do |key, value|
+      @update = Portfolio.find(value[:id]).update(position: value[:position])
+    end
+    render json: "success", status: :ok
+    # format.json { head :no_content }
+    # format.json { render nothing: true, status: :ok, location: @update }
+
+  end
+
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.order("position ASC")
   end
 
   def angular
