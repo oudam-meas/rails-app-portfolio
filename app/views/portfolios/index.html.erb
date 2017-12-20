@@ -1,9 +1,8 @@
-
 <div class="album text-muted">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <%= link_to "Create new",  new_portfolio_url if logged_in?(:site_admin)  %>        
+        <%= link_to "Create new",  new_portfolio_url if logged_in?(:site_admin)  %>
       </div>
       <%= render partial:'portfolio_item', collection: @portfolio_items %>
     </div>

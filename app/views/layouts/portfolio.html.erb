@@ -19,7 +19,9 @@
 
     <main role="main">
       <!-- Start Portfolio Masthead  -->
-      <%= render 'shared/portfolio_masthead' %>
+      <%= if !logged_in?(:site_admin)
+        render 'shared/portfolio_masthead'
+      end %>
       <!-- Start Portfolio Masthead  -->
 
       <!-- Start of Portfolio content -->

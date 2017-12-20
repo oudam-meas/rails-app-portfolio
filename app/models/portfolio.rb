@@ -17,8 +17,8 @@ class Portfolio < ApplicationRecord
   after_initialize :set_defaults # after initialize is call when "new" action is called in the controller
 
   def set_defaults
-    # self.main_image ||= Placeholder.image_generator(h: '600', w: '400')
-    self.thumb_image ||= Placeholder.image_generator(h: '350', w: '200')
+    self.main_image ||= Placeholder.image_generator(h: '580', w: '540')
+    self.thumb_image ||= Placeholder.image_generator(h: '290', w: '270')
   end
   # ||=  means if main_image == nil
   #   main_image = "http://via.placeholder.com/600x400"
