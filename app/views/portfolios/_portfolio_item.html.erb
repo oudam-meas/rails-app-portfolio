@@ -1,8 +1,7 @@
 <div class="card">
   <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
-  <h5 class="card-title"><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></h5>
   <p class="card-text">
-    <b><%= portfolio_item.subtitle %></b>
+    <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %> <b><%= portfolio_item.subtitle %></b>
     <%= portfolio_item.body %>
   </p>
 </div>
