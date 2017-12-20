@@ -9,12 +9,7 @@
         <div class="col-sm-4 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled nav-item">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "About", about_me_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
-            <li><%= link_to "Blogs", blogs_path %></li>
-            <li><%= link_to "Portfloio", portfolios_path, class: 'active' %></li>
-            <li><%= login_helper %></li>
+          <%= nav_helper '', 'li' %>
           </ul>
         </div>
       </div>
