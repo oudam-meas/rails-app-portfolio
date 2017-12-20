@@ -59,3 +59,4 @@ gem 'portfolio_module_view_tool', '~> 0.1.1'
 gem 'petergate', '~> 1.8', '>= 1.8.1'
 gem "font-awesome-rails"
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
