@@ -1,11 +1,14 @@
 module ApplicationHelper
-  def login_helper style = ''
+  def login_helper style = '', tag = ''
+    start_tag = (tag.empty? ? ("") : ("<#{tag}>")).html_safe
+    end_tag = (tag.empty? ? ("") : ("</#{tag}>")).html_safe
+
     if current_user.is_a?(GuestUser)
-      (link_to  "Login", new_user_session_path, class: style) + " ".html_safe +
-      (link_to  "Signup", new_user_registration_path, class: style)
+      start_tag + (link_to  "Login", new_user_session_path, class: style) + end_tag +
+      start_tag + (link_to  "Signup", new_user_registration_path, class: style) + end_tag
     else
-      link_to  "Logout", destroy_user_session_path, method: :delete, class: style
-      end
+      start_tag + (link_to  "Logout", destroy_user_session_path, method: :delete, class: style) + end_tag
+    end
   end
 
   def source_helper(layout_name)
@@ -55,5 +58,4 @@ module ApplicationHelper
   def active? path
     "active" if current_page? path
   end
-
 end
