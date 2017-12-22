@@ -1,15 +1,16 @@
 <div class="container portfolio-form">
   <div class="row">
     <div class="col-md-7">
-    <%= image_tag portfolio_img(@portfolio.thumb_image, 'main'), width: '100%' %>
+    <%= image_tag portfolio_img(@portfolio.main_image, 'main'), width: '100%' %>
     </div>
     <div class="col-md-5">
-      <p>
-        <%= link_to 'Edit', edit_portfolio_path(@portfolio) if logged_in?(:site_admin) %>
-      </p>
       <h1><%= @portfolio.title %></h1>
       <em><%= @portfolio.subtitle %></em>
       <p><%= @portfolio.body %></p>
+      <% if logged_in?(:site_admin)  %>
+        <%= link_to 'Edit', edit_portfolio_path(@portfolio), class: 'btn btn-secondary'%>
+        <%= link_to 'Delete', portfolio_path(@portfolio) , method: :delete, data: { confirm: 'Are you sure?' },  class: 'btn btn-warning' %>
+      <% end %>
       <hr>
       <h3>Technologies used:</h3>
       <ul>
