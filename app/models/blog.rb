@@ -9,6 +9,8 @@ class Blog < ApplicationRecord
 
   after_initialize :set_defaults
 
+  has_many :comments, dependent: :destroy
+
   def set_defaults
     self.topic_id= Topic.last.id
   end

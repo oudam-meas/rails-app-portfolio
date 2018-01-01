@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require jquery-ui
 //= require html.sortable
+//= require cable
 //= require cocoon
 //= require gritter
 //= require turbolinks
