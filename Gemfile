@@ -30,6 +30,7 @@ group :development do
   gem "awesome_print", require:"ap"
   gem 'formatted_rails_logger'
 end
+
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 4.3'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
