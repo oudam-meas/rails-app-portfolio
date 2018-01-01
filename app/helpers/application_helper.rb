@@ -45,6 +45,10 @@ module ApplicationHelper
         url: about_me_path,
         title: 'About'
       },
+      {
+        url: tech_news_path,
+        title: 'Tech News'
+      },
     ]
   end
   #link_to  "Login", new_user_session_path, class: style
