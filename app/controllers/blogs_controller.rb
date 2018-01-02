@@ -14,13 +14,11 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
-    # @blogs = Blog.featured_blog
-    # Puts Debugger
-      # puts "*"*100
-      # puts @blogs.inspect
-    # ByeBug Debugger
-      #byebug
+    if logged_in?(:site_admin)
+      @blogs = Blog.recent.page(params[:page]).per(5)
+    else
+      @blogs = Blog.published.recent.page(params[:page]).per(5)
+    end
     @page_title = "Rails Portfolio | Blog"
   end
 
