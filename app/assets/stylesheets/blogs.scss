@@ -56,7 +56,6 @@ h6,
 /* Nav links */
 .nav-link {
   position: relative;
-  padding: 1rem;
   font-weight: 500;
   color: #cdddeb;
 }
@@ -201,4 +200,7 @@ span.action-icon{
 }
 .blogcrumb a{
   margin: 5px;
+}
+.show-breadcrum{
+  display: block;
 }
