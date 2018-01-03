@@ -22,4 +22,11 @@ module BlogsHelper
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
   end
+  def fa_icon_control blog
+    if blog.draft?
+      fa_icon('sticky-note-o')
+    else
+      fa_icon('check-square-o')
+    end
+  end
 end
