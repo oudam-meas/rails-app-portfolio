@@ -26,13 +26,10 @@
             poster: 'home_bg.png'
             ) %>
           <%= render "shared/application_nav" %>
-
-          <%= yield %>
-
+          <div class="site-content">
+            <%= yield %>
+          </div>
           <%= render "shared/application_footer" %>
-          <%= alerts_helper %>
-          <%= source_helper("application") %>
-
         </div>
       </div>
     </div>

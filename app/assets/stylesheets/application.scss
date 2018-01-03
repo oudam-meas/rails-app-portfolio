@@ -215,3 +215,26 @@ body {
 .tech-news > .card{
   padding: 30px;
 }
+.app-card-container {
+  color: black;
+  text-align: left;
+}
+.app-card-container > .card{
+  padding: 20px;
+}
+
+.picture > img{
+  width: 100%;
+}
+.map > iframe{
+  width: 100%;
+  max-height: 300px;
+}
+
+.cover-container > .site-content{
+  margin-top: 60px;
+  vertical-align: middle;
+}
+.contact a{
+  color: blue;
+}
