@@ -7,13 +7,7 @@ class Blog < ApplicationRecord
 
   belongs_to :topic
 
-  after_initialize :set_defaults
-
   has_many :comments, dependent: :destroy
-
-  def set_defaults
-    self.topic_id= Topic.last.id
-  end
 
   def self.spacial_blog
     all
