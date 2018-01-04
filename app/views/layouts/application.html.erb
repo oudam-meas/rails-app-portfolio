@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <META name="keywords" content="<%= @seo_keywords %>" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+    <%= favicon_link_tag 'favicons/favicon.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -25,13 +27,10 @@
             poster: 'home_bg.png'
             ) %>
           <%= render "shared/application_nav" %>
-
-          <%= yield %>
-
+          <div class="site-content">
+            <%= yield %>
+          </div>
           <%= render "shared/application_footer" %>
-          <%= alerts_helper %>
-          <%= source_helper("application") %>
-
         </div>
       </div>
     </div>

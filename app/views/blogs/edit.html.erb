@@ -1,10 +1,12 @@
 <div class="col-sm-8 blog-main">
   <div class="blog-post">
     <p id="notice"><%= notice %></p>
+    <div class="row pull-right">
+      <%= link_to 'Back', blogs_path %>
+    </div>
     <h2 class="blog-post-title">Edit blog</h2>
     <p class="blog-post-meta">
       <%= render 'form', blog: @blog %>
     </p>
-    <%= link_to 'Back', blogs_path %>
   </div>
 </div>

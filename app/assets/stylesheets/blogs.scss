@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Lato', sans-serif;
   color: #555;
 }
 
@@ -28,7 +28,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 400;
   color: #333;
 }
@@ -56,7 +56,6 @@ h6,
 /* Nav links */
 .nav-link {
   position: relative;
-  padding: 1rem;
   font-weight: 500;
   color: #cdddeb;
 }
@@ -149,7 +148,7 @@ h6,
 }
 .blog-post-title {
   margin-bottom: .25rem;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 .blog-post-meta {
   margin-bottom: 1.25rem;
@@ -189,4 +188,22 @@ h6,
 
 .comment-name {
   font-weight: 700;
+}
+span.action-icon{
+  padding-left: 10px;
+  text-align: right;
+}
+
+.blogcrumb {
+  font-size: 1.25em;
+  margin: 0px 10px 0px 10px;
+}
+.blogcrumb a{
+  margin: 5px;
+}
+.show-breadcrum{
+  display: block;
+}
+.blog-sidebar-source{
+  margin-top: 20px;
 }
