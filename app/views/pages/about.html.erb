@@ -4,7 +4,22 @@
     <div class="row">
       <div class="col-md-4 picture">
         <%= image_tag "profile.jpg", alt: "profile image" %>
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <h5><%= skill.title %></h5>
+            <div class="progress">
+              <div class="progress-bar progress-bar-stripe bg-warning"
+              role="progressbar"
+              aria-valuenow="<%= skill.percent_utilized %>"
+              aria-valuemax="100"
+              style="width: <%= skill.percent_utilized %>%"
+              >
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
+
 
       <div class="col-md-8 content">
         <p>With over a decade of development experience in a number of industries I realized that the typical product creation process between clients and developers was flawed. All too often developers rarely communicate to clients throughout the development stage, resulting in a final product that fails to reach the goal sought by the customer and end user.</p>
